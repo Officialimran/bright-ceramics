@@ -1,0 +1,46 @@
+/* Show tile content only for active slide */
+  .swiper-slide-active-custom .tile-card .tile-info,
+  .swiper-slide-active-custom .tile-card .tile-image,
+  .swiper-slide-active-custom .tile-card .border-top,
+  .swiper-slide-active-custom .tile-card .border-side,
+  .swiper-slide-active-custom .tile-card .border-bottom {
+    display: block;
+    
+  }
+
+  /* Optional: visually emphasize active card */
+  .swiper-slide-active-custom {
+    max-width: 450px;
+    /*height: 534px;*/
+    background-color: #F0F7FD;
+    width: 100%;
+    
+  }
+  .swiper-slide-active-custom img {
+    width: 100%;
+    height: 354px;
+  }
+  
+
+  .latestswiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.85);
+  transition: transform 0.3s ease-in-out;
+}
+
+.swiper-slide-active-custom {
+  transform: scale(1);
+}
+/* Default margin for all slides (inactive) */
+.tile-image {
+  margin-top: 30%;
+  transition: margin-top 0.3s ease-in-out;
+}
+
+/* Override for the active slide */
+.swiper-slide-active-custom .tile-image {
+  margin-top: 0 !important;
+}
+ 
