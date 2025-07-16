@@ -44,3 +44,23 @@
   margin-top: 0 !important;
 }
  
+
+
+/*
+Product carousel slider css
+*/
+
+  .custom-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #e5e7eb; /* Tailwind gray-200 */
+    opacity: 1;
+    margin: 0 4px;
+    border-radius: 9999px; /* rounded-full */
+    transition: background-color 0.3s ease;
+  }
+
+
+  .custom-pagination .swiper-pagination-bullet-active {
+    background-color: #2563eb; /* Tailwind blue-600 */
+  }
