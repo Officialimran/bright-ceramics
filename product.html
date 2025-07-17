@@ -294,18 +294,18 @@
 </section>
 
     <section class="w-full">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col lg:flex-row lg:justify-between gap-4">
+  <div class="max-w-7xl mx-auto px-6 sm:px-4 md:px-6 py-4 flex flex-col lg:flex-row lg:justify-between gap-4">
     <!-- Filters Section -->
     <div class="flex flex-col gap-2 w-full">
 
       <!-- Select Filters with SVG Arrows -->
       <div class="flex flex-wrap items-center gap-0">
         
-        <div class="relative pr-[13px] py-2 w-fit">
+        <div class="relative pr-[2px] lg:pr-[13px] py-2 w-fit">
             <!-- Dropdown Wrapper -->
             <div tabindex="0" class="group relative focus-within:z-10">
                 <!-- Trigger Button -->
-                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-4 py-1 focus:outline-none gap-[20px]">
+                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-1 lg:pr-4 py-1 focus:outline-none gap-[20px]">
                     <!-- Label -->
                     <span>Category</span>
 
@@ -336,7 +336,7 @@
             <!-- Dropdown Wrapper -->
             <div tabindex="0" class="group relative focus-within:z-10">
                 <!-- Trigger Button -->
-                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-4 py-1 focus:outline-none gap-[20px]">
+                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-1 lg:pr-4 py-1 focus:outline-none gap-[20px]">
                     <!-- Label -->
                     <span>Type</span>
 
@@ -367,7 +367,7 @@
             <!-- Dropdown Wrapper -->
             <div tabindex="0" class="group relative focus-within:z-10">
                 <!-- Trigger Button -->
-                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-4 py-1 focus:outline-none gap-[20px]">
+                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-1 lg:pr-4 py-1 focus:outline-none gap-[20px]">
                     <!-- Label -->
                     <span>Size</span>
 
@@ -398,7 +398,7 @@
             <!-- Dropdown Wrapper -->
             <div tabindex="0" class="group relative focus-within:z-10">
                 <!-- Trigger Button -->
-                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-4 py-1 focus:outline-none gap-[20px]">
+                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-1 lg:pr-4 py-1 focus:outline-none gap-[20px]">
                     <!-- Label -->
                     <span>Color</span>
 
@@ -425,7 +425,7 @@
             <!-- Dropdown Wrapper -->
             <div tabindex="0" class="group relative focus-within:z-10">
                 <!-- Trigger Button -->
-                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-4 py-1 focus:outline-none gap-[20px]">
+                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-1 lg:pr-4 py-1 focus:outline-none gap-[20px]">
                     <!-- Label -->
                     <span>Texture</span>
 
@@ -452,7 +452,7 @@
             <!-- Dropdown Wrapper -->
             <div tabindex="0" class="group relative focus-within:z-10">
                 <!-- Trigger Button -->
-                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-4 py-1 focus:outline-none gap-[20px]">
+                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-1 lg:pr-4 py-1 focus:outline-none gap-[20px]">
                     <!-- Label -->
                     <span>Meterial</span>
 
@@ -478,7 +478,7 @@
             <!-- Dropdown Wrapper -->
             <div tabindex="0" class="group relative focus-within:z-10">
                 <!-- Trigger Button -->
-                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-4 py-1 focus:outline-none gap-[20px]">
+                <div class="flex items-center justify-between cursor-pointer bg-transparent text-sm lg:text-base text-[#2F2F2F] font-semibold pr-1 lg:pr-4 py-1 focus:outline-none gap-[20px]">
                     <!-- Label -->
                     <span>Usage Type</span>
 
@@ -547,58 +547,144 @@
   </div>
 </section>
 
-<section class="w-full">
-    <div class="max-w-7xl mx-auto items-center justify-end">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[20px]">
+<section class="w-full mb-[150px]">
+    <div class="max-w-7xl mx-auto items-center justify-end flex flex-col px-6 sm:px-4 md:px-6">
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-[20px] mb-4">
             <!-- Product Card -->
-            <div class="w-[306px] h-[408px] bg-white shadow-md flex flex-col">
+            <div class="w-full h-auto lg:h-[408px] flex flex-col mb-5">
                 <div class="flex-grow flex items-end justify-center">
                     <img src="img/product/30x30.png" alt="Product 1" class="max-h-full object-contain">
                 </div>
-                <div class="p-2">
-                    <p class="font-semibold">Code: 231723</p>
-                    <p>Type: Porcelain</p>
-                    <p>Size: 20x20 cm</p>
+                <div class="p-2 space-y-2">
+                    <p class="font-semibold text-[#2F2F2F] text-[12px] lg:text-[20px] leading-6">Code: 231723</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Type: Porcelain</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Size: 20x20 cm</p>
                 </div>
             </div>
 
             <!-- Example with shorter image (206px height) -->
-            <div class="w-[306px] h-[408px] bg-white shadow-md flex flex-col">
+            <div class="w-full h-auto lg:h-[408px] flex flex-col mb-5">
+
                 <div class="flex-grow flex items-end justify-center">
                     <img src="img/product/Rectangle 9749.png" alt="Product 1" class="max-h-full object-contain">
                 </div>
-                <div class="p-2">
-                    <p class="font-semibold">Code: 231723</p>
-                    <p>Type: Porcelain</p>
-                    <p>Size: 20x20 cm</p>
+                <div class="p-2 space-y-2">
+                    <p class="font-semibold text-[#2F2F2F] text-[12px] lg:text-[20px] leading-6">Code: 231723</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Type: Porcelain</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Size: 20x20 cm</p>
                 </div>
             </div>
             <!-- Product Card -->
-            <div class="w-[306px] h-[408px] bg-white shadow-md flex flex-col">
+            <div class="w-full h-auto lg:h-[408px] flex flex-col mb-5">
                 <div class="flex-grow flex items-end justify-center">
                     <img src="img/product/WR34-002B 2.png" alt="Product 1" class="max-h-full object-contain">
                 </div>
-                <div class="p-2">
-                    <p class="font-semibold">Code: 231723</p>
-                    <p>Type: Porcelain</p>
-                    <p>Size: 20x20 cm</p>
+                <div class="p-2 space-y-2">
+                    <p class="font-semibold text-[#2F2F2F] text-[12px] lg:text-[20px] leading-6">Code: 231723</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Type: Porcelain</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Size: 20x20 cm</p>
                 </div>
             </div>
 
             <!-- Example with shorter image (206px height) -->
-            <div class="w-[306px] h-[408px] bg-white shadow-md flex flex-col">
+            <div class="w-full h-auto lg:h-[408px] flex flex-col mb-5">
                 <div class="flex-grow flex items-end justify-center">
                     <img src="img/product/Rectangle 9750.png" alt="Product 1" class="max-h-full object-contain">
                 </div>
-                <div class="p-2">
-                    <p class="font-semibold">Code: 231723</p>
-                    <p>Type: Porcelain</p>
-                    <p>Size: 20x20 cm</p>
+                <div class="p-2 space-y-2">
+                    <p class="font-semibold text-[#2F2F2F] text-[12px] lg:text-[20px] leading-6">Code: 231723</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Type: Porcelain</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Size: 20x20 cm</p>
+                </div>
+            </div>
+            <div class="w-full h-auto lg:h-[408px] flex flex-col mb-5">
+                <div class="flex-grow flex items-end justify-center">
+                    <img src="img/product/20x30(1).png" alt="Product 1" class="max-h-full object-contain">
+                </div>
+                <div class="p-2 space-y-2">
+                    <p class="font-semibold text-[#2F2F2F] text-[12px] lg:text-[20px] leading-6">Code: 231723</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Type: Porcelain</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Size: 20x20 cm</p>
+                </div>
+            </div>
+            <div class="w-full h-auto lg:h-[408px] flex flex-col mb-5">
+                <div class="flex-grow flex items-end justify-center">
+                    <img src="img/product/GP33-005BE 1(2).png" alt="Product 1" class="max-h-full object-contain">
+                </div>
+                <div class="p-2 space-y-2">
+                    <p class="font-semibold text-[#2F2F2F] text-[12px] lg:text-[20px] leading-6">Code: 231723</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Type: Porcelain</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Size: 20x20 cm</p>
+                </div>
+            </div>
+            <div class="w-full h-auto lg:h-[408px] flex flex-col mb-5">
+                <div class="flex-grow flex items-end justify-center">
+                    <img src="img/product/WR34-008B 1(1).png" alt="Product 1" class="max-h-full object-contain">
+                </div>
+                <div class="p-2 space-y-2">
+                    <p class="font-semibold text-[#2F2F2F] text-[12px] lg:text-[20px] leading-6">Code: 231723</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Type: Porcelain</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Size: 20x20 cm</p>
+                </div>
+            </div>
+            <div class="w-full h-auto lg:h-[408px] flex flex-col mb-5">
+                <div class="flex-grow flex items-end justify-center">
+                    <img src="img/product/RT23-033B 1(2).png" alt="Product 1" class="max-h-full object-contain">
+                </div>
+                <div class="p-2 space-y-2">
+                    <p class="font-semibold text-[#2F2F2F] text-[12px] lg:text-[20px] leading-6">Code: 231723</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Type: Porcelain</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Size: 20x20 cm</p>
+                </div>
+            </div>
+            <div class="w-full h-auto lg:h-[408px]flex flex-col mb-5">
+                <div class="flex-grow flex items-end justify-center">
+                    <img src="img/product/WR34-008K 1.png" alt="Product 1" class="max-h-full object-contain">
+                </div>
+                <div class="p-2 space-y-2">
+                    <p class="font-semibold text-[#2F2F2F] text-[12px] lg:text-[20px] leading-6">Code: 231723</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Type: Porcelain</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Size: 20x20 cm</p>
+                </div>
+            </div>
+            <div class="w-full h-auto lg:h-[408px]flex flex-col mb-5">
+                <div class="flex-grow flex items-end justify-center">
+                    <img src="img/product/GP33-002GR 1.png" alt="Product 1" class="max-h-full object-contain">
+                </div>
+                <div class="p-2 space-y-2">
+                    <p class="font-semibold text-[#2F2F2F] text-[12px] lg:text-[20px] leading-6">Code: 231723</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Type: Porcelain</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Size: 20x20 cm</p>
+                </div>
+            </div>
+            <div class="w-full h-auto lg:h-[408px] flex flex-col mb-5">
+                <div class="flex-grow flex items-end justify-center">
+                    <img src="img/product/RT23-033GND 1.png" alt="Product 1" class="max-h-full object-contain">
+                </div>
+                <div class="p-2 space-y-2">
+                    <p class="font-semibold text-[#2F2F2F] text-[12px] lg:text-[20px] leading-6">Code: 231723</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Type: Porcelain</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Size: 20x20 cm</p>
+                </div>
+            </div>
+           <div class="w-full h-auto lg:h-[408px] flex flex-col mb-5">
+                <div class="flex-grow flex items-end justify-center">
+                    <img src="img/product/W34-008BRL 1.png" alt="Product 1" class="max-h-full object-contain">
+                </div>
+                <div class="p-2 space-y-2">
+                    <p class="font-semibold text-[#2F2F2F] text-[12px] lg:text-[20px] leading-6">Code: 231723</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Type: Porcelain</p>
+                    <p class="font-medium text-[#2F2F2F] text-[12px] lg:text-[16px] leading-5">Size: 20x20 cm</p>
                 </div>
             </div>
 
             <!-- Repeat for remaining product cards -->
         </div>
+        <!-- Buttons -->
+          <button class="inline-flex items-center gap-2 px-6 py-2 text-[#2F2F2F] rounded-full font-normal text-[16px] border border-[#2F2F2F] transition">
+            Explore more
+            <span><img src="img/circle-arrow-down.png" alt="Arrow Icon"></span>
+          </button>
     </div>
 
 </section>
