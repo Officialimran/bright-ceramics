@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bright Ceramics | Product Details</title>
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="css/slider.css"
+    />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+   <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              montserrat: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+</head>
+<body>
+  <div class="w-full">
+    <!-- Header -->
+    <header class="max-w-7xl mx-auto flex items-center justify-between py-6 font-montserrat md:px-0 px-4">
+      <!-- Logo -->
+      <div class="items-center">
+        <a href="">
+          <img src="img/logo.png" alt="Bright Ceramics" />
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex space-x-6 bg-[#FFFFFF] text-[#4D4D4D] font-[400] items-center relative font-montserrat text-[16px] rounded-[87px] border border-[#4D4D4D33] px-8 py-4">
+        <a href="/" class="hover:text-[#4D4D4D]">Home</a>
+
+        <!-- Products Dropdown -->
+        <div class="relative">
+          <button onclick="toggleDesktopDropdown()" class="flex items-center gap-1 focus:outline-none">
+            Products
+            <svg id="arrowIconProducts" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="desktopDropdownProducts" class="absolute hidden bg-white shadow-lg border rounded-md mt-4 w-48 z-50">
+            <a href="#" class="block px-4 py-2 text-[16px]">Wall Tiles</a>
+            <a href="#" class="block px-4 py-2 text-[16px]">Floor Tiles</a>
+            <a href="#" class="block px-4 py-2 text-[16px]">Porcelain</a>
+            <a href="#" class="block px-4 py-2 text-[16px]">Outdoor</a>
+          </div>
+        </div>
+
+        <a href="#" class="hover:text-[#4D4D4D]">Catalogues</a>
+        <a href="#" class="hover:text-[#4D4D4D]">News & Articles</a>
+        <a href="#" class="hover:text-[#4D4D4D]">Room Visualizer</a>
+        <a href="#" class="hover:text-[#4D4D4D]">About</a>
+      </nav>
+
+      <!-- Right Side: Language + Search -->
+      <div class="flex items-center gap-2">
+        <div class="flex space-x-4">
+          <!-- EN Dropdown -->
+          <div class="relative bg-[#FFFFFF] text-[#4D4D4D] border border-[#4D4D4D33] px-4 py-2 rounded-[87px]">
+            <button onclick="toggleLanguageDropdown()" class="flex items-center gap-1 hover:text-[#4D4D4D] focus:outline-none">
+              EN
+              <svg id="arrowIconLang" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="languageDropdown" class="absolute hidden right-0 bg-white shadow-lg border rounded-md mt-3 w-24 z-50">
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">EN</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">BN</a>
+            </div>
+          </div>
+
+          <!-- Search Icon -->
+          <a href="#" class="bg-[#FFFFFF] hover:text-[#4D4D4D] border border-[#4D4D4D33] px-2 py-2 rounded-full text-[#4D4D4D] text-[16px]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2" width="24" height="24">
+              <circle cx="11" cy="11" r="7" />
+              <line x1="16.65" y1="16.65" x2="21" y2="21" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="md:hidden focus:outline-none z-10">
+          <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+      class="fixed top-0 left-0 w-full h-full bg-white z-40 transform -translate-x-full transition-transform duration-300 md:hidden flex flex-col">
+      <div class="flex items-center justify-between p-4 border-b">
+        <div class="text-xl font-bold">
+          <a href=""><img src="img/logo.png" /></a>
+        </div>
+        <button id="closeBtn" class="focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="2" stroke="currentColor" class="w-8 h-8 text-gray-800">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="flex flex-col items-start space-y-6 px-6 pt-10 text-xl font-medium text-gray-800">
+        <a href="/" class="hover:text-blue-600">Home</a>
+
+        <!-- Mobile Products Dropdown -->
+        <div class="w-full">
+          <button class="w-full flex justify-between items-center py-2 hover:text-[#4D4D4D] focus:outline-none"
+            onclick="toggleMobileDropdown('mobileProducts', 'mobileArrowIcon')">
+            <span>Products</span>
+            <svg id="mobileArrowIcon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="mobileProducts" class="hidden pl-4 space-y-2">
+            <a href="#" class="block hover:text-[#4D4D4D]">Wall Tiles</a>
+            <a href="#" class="block hover:text-[#4D4D4D]">Floor Tiles</a>
+            <a href="#" class="block hover:text-[#4D4D4D]">Porcelain</a>
+            <a href="#" class="block hover:text-[#4D4D4D]">Outdoor</a>
+          </div>
+        </div>
+
+        <a href="#" class="hover:text-[#4D4D4D]">Catalogues</a>
+        <a href="#" class="hover:text-[#4D4D4D]">News & Articles</a>
+        <a href="#" class="hover:text-[#4D4D4D]">Room Visualizer</a>
+        <a href="#" class="hover:text-[#4D4D4D]">About</a>
+      </nav>
+    </div>
+  </div>
+
+  <!--Product page breadcumb-->
+  <section class="w-full">
+    <nav class="max-w-7xl mx-auto text-sm text-[#2E2E2E] md:px-0 px-4" aria-label="Breadcrumb">
+        <ol class="flex items-center whitespace-nowrap space-x-1">
+            
+            <!-- Home -->
+            <li class="inline-flex items-center">
+                <a href="#"
+                    class="flex items-center text-sm text-[#2E2E2E]">
+                    Home
+                </a>
+                <svg class="shrink-0 w-5 h-5 text-[#2E2E2E] mx-2" viewBox="0 0 16 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round" />
+                </svg>
+            </li>
+
+            <!-- App Center -->
+            <li class="inline-flex items-center">
+                <a href="#"
+                    class="flex items-center text-sm text-[#1B75BB]">
+                    News & Articles
+                </a>
+            </li>
+
+        </ol>
+    </nav>
+
+  </section>
+
+  <section class="w-full">
+    <div class="relative w-full max-w-7xl mx-auto mt-10 px-4 md:px-6 lg:px-0">
+      <!-- Image container with rounded corners and overflow hidden -->
+      <div class="rounded-2xl overflow-hidden relative">
+        <!-- Background Image -->
+        <img
+          src="img/news/details (2).png"
+          alt="News & Articles"
+          class="w-full h-[260px] lg:h-[260px] object-cover"
+        />
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/50 flex items-center justify-center px-4 text-center">
+          <h2 class="text-white text-3xl md:text-5xl font-semibold leading-snug md:leading-[60px]">
+            News & Articles
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="w-full">
+    <div class="max-w-5xl mx-auto px-4 py-12">
+      <!-- Header -->
+      <div class="space-y-2 lg:space-y-4 mb-4 lg:mb-8">
+        <h1 class="text-[32px] lg:text-[42px] font-semibold text-[#4D4D4D] leading-[42px] lg:leading-[58px] font-montserrat">
+          Why Porcelain Outdoor Tiles are the Perfect Blend of Durability & Style
+        </h1>
+         <p class="text-[14px] lg:text-[18px] font-montserrat font-semibold text-[#4D4D4D]">News <span class="ml-4 text-[#1C75BC]">Jun 2025</span></p>
+      </div>
+
+      <!-- Image -->
+      <div class="rounded-lg overflow-hidden max-w-[840px] mx-auto mb-4 lg:mb-8">
+        <img src="img/news/Best Satvario Tiles(1).png" alt="Porcelain Outdoor Tiles" class="w-full h-auto object-cover" />
+      </div>
+
+      <!-- Introduction -->
+      <div class="space-y-4 text-[#4D4D4D] text-[14px] lg:text-[16px] font-normal font-montserrat leading-6">
+        <p>
+          When it comes to outdoor design, the right flooring makes all the difference. At Bright Ceramics, we believe
+          that your exterior space deserves the same attention to detail and elegance as your interior. That’s why
+          porcelain outdoor tiles are fast becoming a favorite choice for modern homes and commercial projects alike.
+        </p>
+        <p>
+          In this guide, we’ll explore the many benefits of porcelain outdoor tiles and why they are the smart, stylish,
+          and long-lasting choice for patios, gardens, terraces, and more.
+        </p>
+      </div>
+
+      <!-- Section: Durability -->
+      <div class="mt-10">
+          <h2 class="text-[24px] lg:text-[32px] font-semibold text-[#4D4D4D] font-montserrat my-4">Built to Last – Exceptional Durability</h2>
+          <p class="text-[14px] lg:text-[16px] font-normal text-[#4D4D4D] font-montserrat leading-[25px]">
+            Outdoor areas face constant exposure to the elements — rain, sunlight, heavy foot traffic, and even frost.
+            Bright Ceramics’ porcelain tiles are engineered to withstand it all. Crafted using advanced vitrification
+            techniques, these tiles are incredibly dense and resistant to wear and tear.
+          </p>
+          <p class="text-[14px] lg:text-[16px] font-normal text-[#4D4D4D] font-montserrat leading-[25px]">
+            Whether you’re creating a cozy patio or a sprawling poolside lounge, porcelain ensures your space looks
+            stunning year after year with minimal maintenance.
+          </p>
+          <h2 class="text-[24px] lg:text-[32px] font-semibold text-[#4D4D4D] font-montserrat my-4">Low Maintenance, High Impact</h2>
+          <p class="text-[14px] lg:text-[16px] font-normal text-[#4D4D4D] font-montserrat leading-[25px]">
+            Unlike natural stone or wooden surfaces, porcelain doesn’t demand regular sealing, polishing, or special treatments. A simple wash with water or mild soap is enough to keep the surface spotless.
+          </p>
+          <p class="text-[14px] lg:text-[16px] font-normal text-[#4D4D4D] font-montserrat leading-[25px]">
+            That means less time cleaning and more time enjoying your outdoor haven. With Bright Ceramics, style doesn’t come with stress.
+          </p>
+          <h2 class="text-[24px] lg:text-[32px] font-semibold text-[#4D4D4D] font-montserrat my-4">Slip-Resistant for Safe Outdoor Living</h2>
+          <p class="text-[14px] lg:text-[16px] font-normal text-[#4D4D4D] font-montserrat leading-[25px]">
+           Safety should never be compromised — especially in outdoor spaces where water exposure is common. Our porcelain tiles are designed with anti-slip finishes that provide grip, reducing the risk of accidents.
+          </p>
+          <p class="text-[14px] lg:text-[16px] font-normal text-[#4D4D4D] font-montserrat leading-[25px]">
+            From garden walkways to balcony floors, Bright Ceramics outdoor tiles are the perfect blend of beauty and security.
+          </p>
+          <h2 class="text-[24px] lg:text-[32px] font-semibold text-[#4D4D4D] font-montserrat my-4">Timeless Aesthetics, Endless Design Possibilities</h2>
+          <p class="text-[14px] lg:text-[16px] font-normal text-[#4D4D4D] font-montserrat leading-[25px]">
+           Porcelain tiles are available in a wide variety of textures, colors, and finishes — mimicking the appearance of wood, stone, or even concrete. Whether you prefer a rustic vibe or a contemporary feel, there’s a porcelain look that suits your taste. Bright Ceramics offers collections that harmonize with nature while adding a touch of modern flair to any outdoor space.
+          </p>
+          <h2 class="text-[24px] lg:text-[32px] font-semibold text-[#4D4D4D] font-montserrat my-4">Fade & Stain Resistant</h2>
+          <p class="text-[14px] lg:text-[16px] font-normal text-[#4D4D4D] font-montserrat leading-[25px]">
+           Worried about the sun fading your tiles? Or outdoor spills leaving permanent marks? With porcelain tiles from Bright Ceramics, those worries are a thing of the past. Our tiles are UV-resistant and non-porous, ensuring they retain their look even after years of exposure.
+          </p>
+          <p class="text-[14px] lg:text-[16px] font-normal text-[#4D4D4D] font-montserrat leading-[25px]">
+            This makes them an ideal choice for outdoor kitchens, BBQ zones, and garden seating areas.
+          </p>
+          <h2 class="text-[24px] lg:text-[32px] font-semibold text-[#4D4D4D] font-montserrat my-4">Eco-Friendly and Sustainable</h2>
+          <p class="text-[14px] lg:text-[16px] font-normal text-[#4D4D4D] font-montserrat leading-[25px]">
+           At Bright Ceramics, we care about the planet as much as we care about performance. Our porcelain tiles are made with sustainable practices, using natural materials and minimal water during manufacturing.
+          </p>
+          <p class="text-[14px] lg:text-[16px] font-normal text-[#4D4D4D] font-montserrat leading-[25px]">
+            Not only are they recyclable, but their long lifespan also means fewer replacements, reducing environmental impact over time.
+          </p>
+          <h2 class="text-[24px] lg:text-[32px] font-semibold text-[#4D4D4D] font-montserrat my-4">Conclusion: Upgrade Your Outdoors with Bright Ceramics</h2>
+          <p class="text-[14px] lg:text-[16px] font-normal text-[#4D4D4D] font-montserrat leading-[25px]">
+           Porcelain outdoor tiles offer the best of all worlds — rugged strength, stylish looks, and low upkeep. At Bright Ceramics, we bring you a wide range of premium outdoor tiles that elevate every inch of your space. Transform your terraces, pathways, balconies, and gardens into a lasting statement of beauty and quality. Explore our latest outdoor tile collections today. Let Bright Ceramics be your partner in outdoor perfection.
+          </p>
+          
+
+      </div>
+    </div>
+
+  </section>
+    
+
+  <section class="w-full">
+    <div class="max-w-3xl mx-auto px-4 py-12">
+    <h2 class="text-3xl lg:text-[48px] font-semibold text-center text-[#4D4D4D] font-montserrat mb-2 lg:mb-6">
+      <span class="font-bold">Leave a</span> <span class="font-normal">Reply</span>
+    </h2>
+    <p class="text-center text-[#000000] mt-2 lg:mb-6 text-[14px] lg:text-[17px] font-montserrat">
+      Your email address will not be published. Required fields are marked <span class="text-red-500">*</span>
+    </p>
+
+  <form class="mt-10 space-y-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-[#4D4D4D] font-semibold text-[16px] lg:text-[20px] font-montserrat mb-1">Name<span class="text-[#4D4D4D]">*</span></label>
+          <input type="text" id="name" class="w-full text-[#4D4D4D] border border-[#4D4D4D] rounded-[37px] px-4 py-3 focus:outline-none focus:ring-0" required />
+        </div>
+        <div>
+          <label for="email" class="block text-[#4D4D4D] font-semibold text-[16px] lg:text-[20px] font-montserrat mb-1">Email<span class="text-[#4D4D4D]">*</span></label>
+          <input type="text" id="email" class="w-full text-[#4D4D4D] border border-[#4D4D4D] rounded-[37px] px-4 py-3 focus:outline-none focus:ring-0" required />
+        </div>
+        <div>
+          <label for="contact" class="block text-[#4D4D4D] font-semibold text-[16px] lg:text-[20px] font-montserrat mb-1">Contact Number<span class="text-[#4D4D4D]">*</span></label>
+          <input type="text" id="contact" class="w-full text-[#4D4D4D] border border-[#4D4D4D] rounded-[37px] px-4 py-3 focus:outline-none focus:ring-0" required />
+        </div>
+        <div>
+          <label for="subject" class="block text-[#4D4D4D] font-semibold text-[16px] lg:text-[20px] font-montserrat mb-1">Subject<span class="text-[#4D4D4D]">*</span></label>
+          <input type="text" id="subject" class="w-full text-[#4D4D4D] border border-[#4D4D4D] rounded-[37px] px-4 py-3 focus:outline-none focus:ring-0" required />
+        </div>
+        
+      </div>
+
+      <!-- Message -->
+      <div>
+        <label for="message" class="block text-[#4D4D4D] font-semibold text-[16px] lg:text-[20px] font-montserrat mb-1">Message</label>
+        <input type="text" id="subject" class="w-full h-32 text-[#4D4D4D] border border-[#4D4D4D] rounded-[37px] px-4 py-3 focus:outline-none focus:ring-0" required />
+      </div>
+
+      <!-- Checkbox -->
+      <div class="flex items-center justify-center">
+        <input type="checkbox" id="terms" class="mt-1 mr-2 border-[#767676] rounded focus:ring-[#767676]" />
+        <label for="terms" class="text-[14px] text-[#4D4D4D] font-montserrat font-normal">
+          I am bound by the terms of the Service I accept Privacy Policy
+        </label>
+      </div>
+
+      <!-- Submit -->
+      <div class="text-center">
+        <button type="submit" class="bg-[#2F2F2F] text-[#FFFFFF] px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2F2F2F] transition duration-200">
+          Send Message
+        </button>
+      </div>
+    </form>
+  </div>
+
+  </section>
+
+  <section class="w-full mb-10 lg:mb-20">
+    <div class="max-w-5xl mx-auto lg:px-0 px-4">
+      <h2 class="text-3xl lg:text-[48px] font-semibold text-center text-[#4D4D4D] font-montserrat mb-6 lg:mb-10">
+        <span class="font-bold">Similar</span> <span class="font-normal"> Articles</span>
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white overflow-hidden">
+            <img src="img/news/image 1.png" alt="Office" class="w-full h-60 object-cover rounded-xl" />
+            <div class="flex border-b border-[#D9D9D9]">
+              <div class="flex justify-center py-4 items-start flex-shrink-0">
+                <div class="border-r border-[#D9D9D9] flex flex-col justify-center pr-4 h-full">
+                  <p class="text-[14px] lg:text-[20px] font-semibold font-montserrat text-[#2F2F2F] leading-5">News</p>
+                  <p class="text-[10px] lg:text-[14px] font-semibold text-[#1C75BC] font-montserrat mt-2">Jun 2025</p>
+                </div>
+              </div>
+              <div class="p-4">
+                <h2 class="text-[20px] lg:text-[30px] font-medium text-[#4D4D4D] leading-9 font-montserrat flex-1">
+                  Duis aute irure dolor in reprehenderit in volup...
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white overflow-hidden">
+            <img src="img/news/image 1.png" alt="Office" class="w-full h-60 object-cover rounded-xl" />
+            <div class="flex border-b border-[#D9D9D9]">
+              <div class="flex justify-center py-4 items-start flex-shrink-0">
+                <div class="border-r border-[#D9D9D9] flex flex-col justify-center pr-4 h-full">
+                  <p class="text-[14px] lg:text-[20px] font-semibold font-montserrat text-[#2F2F2F] leading-5">News</p>
+                  <p class="text-[10px] lg:text-[14px] font-semibold text-[#1C75BC] font-montserrat mt-2">Jun 2025</p>
+                </div>
+              </div>
+              <div class="p-4">
+                <h2 class="text-[20px] lg:text-[30px] font-medium text-[#4D4D4D] leading-9 font-montserrat flex-1">
+                  Duis aute irure dolor in reprehenderit in volup...
+                </h2>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="w-full bg-white font-montserrat">
+    <div class="max-w-7xl mx-auto px-4 lg:px-0 py-8 grid grid-cols-1 md:grid-cols-4 gap-16 items-start">
+      
+      <!-- Left: Logo -->
+      <div class="flex flex-col items-start">
+        <img src="img/footer-logo.png" alt="Bright Ceramics Logo" class="w-40 mb-4">
+      </div>
+
+      <!-- Center: Navigation and Social Media -->
+      <div class="flex flex-col space-y-4 w-[350px]">
+        <ul class="flex flex-wrap gap-4 text-sm font-semibold font-montserrat text-[#2F2F2F]">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Catalogue</a></li>
+          <li><a href="#">Dealer Information</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+        <ul class="flex gap-3 items-center">
+          <li class="border border-[#DBDBDB] rounded-md p-1"><a href="#"><img src="img/facebook.png" alt="Facebook" class="w-6"></a></li>
+          <li class="border border-[#DBDBDB] rounded-md p-1"><a href="#"><img src="img/linkedin.png" alt="LinkedIn" class="w-6"></a></li>
+          <li class="border border-[#DBDBDB] rounded-md p-1"><a href="#"><img src="img/instagram.png" alt="Instagram" class="w-6"></a></li>
+          <li class="border border-[#DBDBDB] rounded-md p-1"><a href="#"><img src="img/pinterest.png" alt="Pinterest" class="w-6"></a></li>
+          <li class="border border-[#DBDBDB] rounded-md p-1"><a href="#"><img src="img/youtube.png" alt="YouTube" class="w-6"></a></li>
+        </ul>
+      </div>
+
+        <div class="flex flex-col text-sm space-y-4 ml-0 md:ml-16">
+          <!-- Phone -->
+          <div class="flex items-start gap-2">
+            <img src="img/call.png" alt="Phone" class="w-4 mt-1">
+            <span class="text-[#2F2F2F] font-montserrat text-sm">09638113300</span>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-start gap-2">
+            <img src="img/email.png" alt="Email" class="w-4 mt-1">
+            <span class="text-[#2F2F2F] font-montserrat text-sm">info@dblceramics.com</span>
+          </div>
+          
+        </div>
+
+        <div class="flex flex-col text-sm space-y-4">
+          <!-- Corporate Office -->
+            <div class="flex items-start gap-2">
+              <img src="img/location.png" alt="Location" class="w-4 mt-1">
+              <div>
+                <p class="font-semibold font-montserrat">CORPORATE OFFICE</p>
+                <p class="font-montserrat">2nd Floor, House 10, Road 04, Gulshan 1, Dhaka 1212, Bangladesh</p>
+              </div>
+            </div>
+
+            <!-- Factory -->
+            <div class="flex items-start gap-2">
+              <img src="img/location.png" alt="Factory" class="w-4 mt-1">
+              <div>
+                <p class="font-semibold font-montserrat">FACTORY</p>
+                <p>Dhamrai, Sreepur, Gazipur, Bangladesh</p>
+              </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  <section class="w-full bg-[#2F2F2F] py-[26px] px-20">
+    <div class="flex max-w-7xl mx-auto items-center justify-center">
+      <p class="text-sm font-montserrat font-[300] text-[#fff]">© 2025 Bright Ceramics Limited</p>
+    </div>
+  </section>
+
+
+
+  <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn?.addEventListener('click', () => {
+        mobileMenu.classList.remove('-translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+        });
+
+        closeBtn?.addEventListener('click', () => {
+        mobileMenu.classList.add('-translate-x-full');
+        mobileMenu.classList.remove('translate-x-0');
+        });
+
+        function toggleMobileDropdown(id, arrowId) {
+        const el = document.getElementById(id);
+        const arrow = document.getElementById(arrowId);
+        el.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+        }
+
+        function toggleDesktopDropdown() {
+        const dropdown = document.getElementById('desktopDropdownProducts');
+        const arrow = document.getElementById('arrowIconProducts');
+        dropdown.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+        }
+
+        function toggleLanguageDropdown() {
+        const dropdown = document.getElementById('languageDropdown');
+        const arrow = document.getElementById('arrowIconLang');
+        dropdown.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+        }
+
+        // Outside click: close dropdowns
+        window.addEventListener('click', function (e) {
+        if (!e.target.closest('#desktopDropdownProducts') &&
+            !e.target.closest('[onclick^="toggleDesktopDropdown"]')) {
+            document.getElementById('desktopDropdownProducts')?.classList.add('hidden');
+            document.getElementById('arrowIconProducts')?.classList.remove('rotate-180');
+        }
+
+        if (!e.target.closest('#languageDropdown') &&
+            !e.target.closest('[onclick^="toggleLanguageDropdown"]')) {
+            document.getElementById('languageDropdown')?.classList.add('hidden');
+            document.getElementById('arrowIconLang')?.classList.remove('rotate-180');
+        }
+        });
+    </script>
+    
+    <!-- Product page carousel slider-->
+    <script>
+        
+        const swiper = new Swiper(".mySwiper", {
+            loop: true,
+            speed: 800,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: "#custom-next",
+                prevEl: "#custom-prev",
+            },
+        });
+    </script>
+
+
+<!--Latest product slider-->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentEl = document.getElementById("slide-current");
+        const totalEl = document.getElementById("slide-total");
+
+        const swiper = new Swiper(".latestswiper", {
+          loop: true,
+          centeredSlides: true,
+          spaceBetween: 30,
+          slidesPerView: 3,
+          breakpoints: {
+            0: { slidesPerView: 1 },
+            640: { slidesPerView: 1.2 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          },
+          navigation: {
+            nextEl: "#latestNext",
+            prevEl: "#latestPrev",
+          },
+          on: {
+            init: function () {
+              const realSlides = this.wrapperEl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length;
+              if (totalEl) {
+                totalEl.innerText = String(realSlides).padStart(2, "0");
+              }
+              updateSlideIndex(this);
+              updateBorders(this);
+            },
+            slideChange: function () {
+              updateSlideIndex(this);
+              updateBorders(this);
+            },
+          },
+        });
+
+        function updateSlideIndex(swiper) {
+          const current = swiper.realIndex + 1;
+          if (currentEl) {
+            currentEl.innerText = String(current).padStart(2, "0");
+          }
+        }
+
+        function updateBorders(swiper) {
+          // Remove previous active states
+          swiper.slides.forEach((slide) => {
+            slide.classList.remove("swiper-slide-active-custom");
+            const card = slide.querySelector(".tile-card");
+            if (card) {
+              card.classList.remove("active");
+            }
+          });
+
+          // Add new active states
+          const activeSlide = swiper.slides[swiper.activeIndex];
+          if (activeSlide) {
+            activeSlide.classList.add("swiper-slide-active-custom");
+            const activeCard = activeSlide.querySelector(".tile-card");
+            if (activeCard) {
+              activeCard.classList.add("active");
+            }
+          }
+        }
+      });
+    </script>
+
+
+
+    <script>
+      // Thumbnail click logic
+      function changeImage(thumb) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = thumb.src;
+      }
+
+      // Initialize Swiper
+      new Swiper(".thumbnailSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 16,
+        breakpoints: {
+          640: { slidesPerView: 4 },
+          768: { slidesPerView: 5 },
+          1024: { slidesPerView: 6 },
+        },
+      });
+    </script>
+
+
+  <script>
+        const tabs = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.tab-content');
+
+        function setActiveTab(tab) {
+          tabs.forEach(btn => {
+            btn.classList.toggle('bg-[#2F2F2F]', btn.dataset.tab === tab);
+            btn.classList.toggle('text-white', btn.dataset.tab === tab);
+            btn.classList.toggle('text-[#2F2F2F]', btn.dataset.tab !== tab);
+          });
+          contents.forEach(content => {
+            content.classList.toggle('hidden', tab !== 'all' && content.dataset.tab !== tab);
+          });
+        }
+
+        tabs.forEach(btn => {
+          btn.addEventListener('click', () => setActiveTab(btn.dataset.tab));
+        });
+
+        // Default to 'all' tab
+        setActiveTab('all');
+      </script>
+
+
+</body>
+</html>
